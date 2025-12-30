@@ -336,6 +336,19 @@
             flex-wrap: wrap;
         }
 
+        .education-school-with-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
         .education-school {
             font-size: 1.15rem;
             font-weight: 600;
@@ -475,6 +488,223 @@
             }
         }
 
+        /* Gallery Styles */
+        .project-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-right: 1rem;
+            vertical-align: middle;
+        }
+
+        .experience-company-with-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-toggle {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .gallery-toggle:hover {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+
+        .gallery {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border-light);
+        }
+
+        .gallery.active {
+            display: block;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            max-height: 250px;
+            background-color: var(--light-bg);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .pdf-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .website-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.25rem;
+        }
+
+        .website-link:hover {
+            opacity: 0.8;
+            transform: translateX(4px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 1rem;
+            z-index: 1001;
+        }
+
+        .modal-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.3s ease;
+            z-index: 1001;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.2);
+        }
+
         @media (max-width: 600px) {
             .logo {
                 font-size: 1.2rem;
@@ -495,10 +725,41 @@
             .section-title {
                 font-size: 1.5rem;
             }
+
+            .project-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-controls {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .modal-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Media Modal -->
+    <div id="mediaModal" class="modal" onclick="closeMediaModal(event)">
+        <button class="close-btn" onclick="closeMediaModal()">×</button>
+        <div class="modal-controls">
+            <button class="modal-btn" id="downloadBtn" onclick="downloadMedia(event)">📥 Download</button>
+            <button class="modal-btn" onclick="closeMediaModal()">✕ Close</button>
+        </div>
+        <div class="modal-content" id="modalContent" onclick="event.stopPropagation()">
+            <!-- Content will be inserted here -->
+        </div>
+    </div>
+
     <!-- Header/Navigation -->
     <header>
         <nav>
@@ -520,8 +781,7 @@
             <p class="title">Electrical Engineer & AI Specialist</p>
             <p>MSc in Signal Processing & Machine Learning | Deep Learning for Remote Sensing | SAR Imaging Expert</p>
             <div class="contact-links">
-                <a href="mailto:jebonvin@ethz.ch">jebonvin@ethz.ch</a>
-                <a href="tel:+41795030843">+41 79 503 08 43</a>
+                <a href="mailto:jerome.bonvin@hotmail.com">jerome.bonvin@hotmail.com</a>
             </div>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
@@ -538,6 +798,7 @@
                     <p>My work has focused on leveraging machine learning techniques to enhance SAR (Synthetic Aperture Radar) imagery, optimize remote sensing applications, and advance optical imaging technologies. I'm passionate about applying cutting-edge deep learning methods to real-world challenges in earth observation and biomedical imaging.</p>
                 </div>
                 <div>
+                    <img src="radartower.jpg" alt="Radar Tower - Remote Sensing" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 1.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                     <div class="info-box">
                         <h4>Key Focus Areas</h4>
                         <p>• Deep Learning & Neural Networks</p>
@@ -564,8 +825,15 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">AI Application Engineer</div>
-                        <div class="experience-company">Airbus Defence and Space GmbH, Immenstaad, Germany</div>
+                        <div class="experience-company-with-logo">
+                            <img src="logos/Airbus_Defense_and_Space.png" alt="Airbus Logo" class="project-logo">
+                            <div>
+                                <div class="experience-title">AI Application Engineer</div>
+                                <div class="experience-company">
+                                    <a href="https://space-solutions.airbus.com/imagery/our-optical-and-radar-satellite-imagery/radar-constellation/" target="_blank" class="website-link">Airbus Defence and Space GmbH, Immenstaad, Germany</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="experience-date">2025</div>
                 </div>
@@ -579,8 +847,15 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">Research Assistant</div>
-                        <div class="experience-company">Synthetic Aperture Radar Laboratory, Department of Geography, Universität Zürich</div>
+                        <div class="experience-company-with-logo">
+                            <img src="logos/sarlab_logo.png" alt="SAR Lab Logo" class="project-logo">
+                            <div>
+                                <div class="experience-title">Research Assistant</div>
+                                <div class="experience-company">
+                                    <a href="https://www.geo.uzh.ch/en/units/rsws/research/SAR_Lab/SARLab-Computational-SAR.html" target="_blank" class="website-link">Synthetic Aperture Radar Laboratory, Department of Geography, Universität Zürich</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="experience-date">2024–Current</div>
                 </div>
@@ -589,13 +864,45 @@
                     <li>Achieved 60% accuracy rate in object detection tasks using convolutional neural networks</li>
                     <li>Contributed to advancing remote sensing techniques for earth observation and monitoring systems</li>
                 </ul>
+                <button class="gallery-toggle" onclick="toggleGallery('sarlab-gallery')">📸 View Project Gallery</button>
+                <div class="gallery" id="sarlab-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <img src="sarlab/Detection.jpg" alt="Vehicle Detection Results" style="cursor: pointer;">
+                            <div class="gallery-label">Vehicle Detection Results</div>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="sarlab/Vehicle_Detection.pdf" target="_blank">
+                                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; font-weight: bold; flex-direction: column; gap: 0.5rem;">
+                                    <div style="font-size: 2rem;">📄</div>
+                                    <div>Vehicle Detection Report</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <video autoplay muted loop style="width: 100%; height: 100%; cursor: pointer;">
+                                <source src="sarlab/drone_imaging.gif" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="gallery-label">Drone Imaging Data</div>
+                        </div>
+                    </div>
+                    <a href="sarlab/Vehicle_Detection.pdf" class="pdf-link" target="_blank">📥 Download Full Report</a>
+                </div>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">Bachelor Thesis Researcher</div>
-                        <div class="experience-company">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</div>
+                        <div class="experience-company-with-logo">
+                            <img src="logos/eth_logo.png" alt="ETH Logo" class="project-logo">
+                            <div>
+                                <div class="experience-title">Bachelor Thesis Researcher</div>
+                                <div class="experience-company">
+                                    <a href="https://www.razanskylab.org/" target="_blank" class="website-link">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="experience-date">2023–2024</div>
                 </div>
@@ -604,13 +911,46 @@
                     <li>Conducted comprehensive analysis of photodegradation under varying laser parameters (wavelength, fluence, exposure time)</li>
                     <li>Applied remote sensing and image processing principles to enhance optoacoustic imaging resolution using MATLAB and Python</li>
                 </ul>
+                <button class="gallery-toggle" onclick="toggleGallery('thesis-gallery')">📸 View Project Gallery</button>
+                <div class="gallery" id="thesis-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <img src="Sonano/Nanoparticles.png" alt="Gold Nanoparticles Structure" style="cursor: pointer;">
+                            <div class="gallery-label">Gold Nanoparticles</div>
+                        </div>
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <img src="Sonano/Imaging_myself.jpg" alt="Optoacoustic Imaging Results" style="cursor: pointer;">
+                            <div class="gallery-label">Optoacoustic Imaging</div>
+                        </div>
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <img src="Sonano/my_veins.gif" alt="Vascular Imaging" style="cursor: pointer;">
+                            <div class="gallery-label">Vascular Imaging Demo</div>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="Sonano/Bachelor_Thesis.pdf" target="_blank">
+                                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; font-weight: bold; flex-direction: column; gap: 0.5rem;">
+                                    <div style="font-size: 2rem;">📄</div>
+                                    <div>Bachelor Thesis</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="Sonano/Bachelor_Thesis.pdf" class="pdf-link" target="_blank">📥 Download Full Thesis</a>
+                </div>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">Research Assistant (SONANO Project)</div>
-                        <div class="experience-company">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</div>
+                        <div class="experience-company-with-logo">
+                            <img src="logos/sonano_logo.png" alt="SONANO Logo" class="project-logo">
+                            <div>
+                                <div class="experience-title">Research Assistant (SONANO Project)</div>
+                                <div class="experience-company">
+                                    <a href="https://www.razanskylab.org/" target="_blank" class="website-link">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="experience-date">2022–2023</div>
                 </div>
@@ -619,13 +959,43 @@
                     <li>Contributed to development of optoacoustic contrast agents for improved cancer detection</li>
                     <li>Supported experimental design and data analysis for biomedical imaging research</li>
                 </ul>
+                <button class="gallery-toggle" onclick="toggleGallery('sonano-gallery')">📸 View Project Gallery</button>
+                <div class="gallery" id="sonano-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <img src="Sonano/Nanoparticles.png" alt="Nanoparticle Visualization" style="cursor: pointer;">
+                            <div class="gallery-label">Nanoparticle Design</div>
+                        </div>
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <video autoplay muted loop style="width: 100%; height: 100%; cursor: pointer;">
+                                <source src="Sonano/Walenstadt_1385019F-F1AF-4D47-A507-70CAD36BFFA3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="gallery-label">Field Imaging</div>
+                        </div>
+                        <div class="gallery-item" onclick="openMediaModal(this)">
+                            <video autoplay muted loop style="width: 100%; height: 100%; cursor: pointer;">
+                                <source src="Sonano/sonano_laser.mov" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="gallery-label">Laser Setup</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">Teaching Assistant</div>
-                        <div class="experience-company">ETH Zürich - Technische Mechanik (Applied Mechanics)</div>
+                        <div class="experience-company-with-logo">
+                            <img src="logos/eth_logo.png" alt="ETH Logo" class="project-logo">
+                            <div>
+                                <div class="experience-title">Teaching Assistant</div>
+                                <div class="experience-company">
+                                    <a href="https://www.ethz.ch/" target="_blank" class="website-link">ETH Zürich - Technische Mechanik (Applied Mechanics)</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="experience-date">Autumn 2021</div>
                 </div>
@@ -690,10 +1060,15 @@
 
             <div class="education-item">
                 <div class="education-header">
-                    <div>
-                        <div class="education-school">ETH Zürich</div>
-                        <div class="education-degree">Master of Science in Electrical Engineering</div>
-                        <div class="education-track">Track: Signal Processing and Machine Learning</div>
+                    <div class="education-school-with-logo">
+                        <img src="logos/eth_logo.png" alt="ETH Logo" class="education-logo">
+                        <div>
+                            <div class="education-school">
+                                <a href="https://www.ethz.ch/" target="_blank" class="website-link">ETH Zürich</a>
+                            </div>
+                            <div class="education-degree">Master of Science in Electrical Engineering</div>
+                            <div class="education-track">Track: Signal Processing and Machine Learning</div>
+                        </div>
                     </div>
                     <div class="education-period">2024–Current</div>
                 </div>
@@ -701,9 +1076,14 @@
 
             <div class="education-item">
                 <div class="education-header">
-                    <div>
-                        <div class="education-school">ETH Zürich</div>
-                        <div class="education-degree">Bachelor of Science in Electrical Engineering</div>
+                    <div class="education-school-with-logo">
+                        <img src="logos/eth_logo.png" alt="ETH Logo" class="education-logo">
+                        <div>
+                            <div class="education-school">
+                                <a href="https://www.ethz.ch/" target="_blank" class="website-link">ETH Zürich</a>
+                            </div>
+                            <div class="education-degree">Bachelor of Science in Electrical Engineering</div>
+                        </div>
                     </div>
                     <div class="education-period">2020–2024</div>
                 </div>
@@ -711,10 +1091,15 @@
 
             <div class="education-item">
                 <div class="education-header">
-                    <div>
-                        <div class="education-school">Lycée Collège des Creusets</div>
-                        <div class="education-degree">High School Diploma</div>
-                        <div class="education-track">Sion, Switzerland</div>
+                    <div class="education-school-with-logo">
+                        <img src="logos/lycee_logo.png" alt="Lycée Logo" class="education-logo" style="height: 40px;">
+                        <div>
+                            <div class="education-school">
+                                <a href="https://lccreusets.ch/" target="_blank" class="website-link">Lycée Collège des Creusets</a>
+                            </div>
+                            <div class="education-degree">High School Diploma</div>
+                            <div class="education-track">Sion, Switzerland</div>
+                        </div>
                     </div>
                     <div class="education-period">2014–2019</div>
                 </div>
@@ -723,14 +1108,17 @@
             <h3 style="margin-top: 2rem; margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.1rem;">Languages</h3>
             <div class="languages-grid">
                 <div class="language-item">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🇫🇷</div>
                     <div class="language-name">French</div>
                     <div class="language-level">Mother Tongue</div>
                 </div>
                 <div class="language-item">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🇬🇧</div>
                     <div class="language-name">English</div>
                     <div class="language-level">Bilingual</div>
                 </div>
                 <div class="language-item">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🇩🇪</div>
                     <div class="language-name">German</div>
                     <div class="language-level">Intermediate (B2)</div>
                 </div>
@@ -744,11 +1132,11 @@
             <div class="contact-info">
                 <div class="contact-method">
                     <div>✉️ Email</div>
-                    <a href="mailto:jebonvin@ethz.ch">jebonvin@ethz.ch</a>
+                    <a href="mailto:jerome.bonvin@hotmail.com">jerome.bonvin@hotmail.com</a>
                 </div>
                 <div class="contact-method">
-                    <div>📱 Phone</div>
-                    <a href="tel:+41795030843">+41 79 503 08 43</a>
+                    <div>� ETH Email</div>
+                    <a href="mailto:jebonvin@ethz.ch">jebonvin@ethz.ch</a>
                 </div>
             </div>
         </section>
@@ -757,6 +1145,67 @@
     <!-- Footer -->
     <footer style="background-color: var(--primary-color); color: white; text-align: center; padding: 2rem; font-size: 0.9rem;">
         <p>© 2025 Jérôme Bonvin. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.85rem;">This website was created with GitHub Copilot</p>
     </footer>
+
+    <script>
+        function toggleGallery(galleryId) {
+            const gallery = document.getElementById(galleryId);
+            gallery.classList.toggle('active');
+        }
+
+        function openMediaModal(element) {
+            const modal = document.getElementById('mediaModal');
+            const modalContent = document.getElementById('modalContent');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            // Get the media element (img or video)
+            const media = element.querySelector('img') || element.querySelector('video');
+            
+            if (!media) return;
+            
+            let mediaClone;
+            if (media.tagName === 'IMG') {
+                mediaClone = document.createElement('img');
+                mediaClone.src = media.src;
+                mediaClone.alt = media.alt;
+                downloadBtn.onclick = () => downloadFile(media.src, media.alt);
+            } else {
+                mediaClone = document.createElement('video');
+                mediaClone.src = media.querySelector('source').src;
+                mediaClone.controls = true;
+                mediaClone.autoplay = true;
+                downloadBtn.onclick = () => downloadFile(media.querySelector('source').src, 'video');
+            }
+            
+            modalContent.innerHTML = '';
+            modalContent.appendChild(mediaClone);
+            modal.classList.add('active');
+        }
+
+        function closeMediaModal(event) {
+            const modal = document.getElementById('mediaModal');
+            // Only close if clicking on the modal background, not on content
+            if (!event || event.target === modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        function downloadFile(url, filename) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename || url.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('mediaModal').classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
