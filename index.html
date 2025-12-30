@@ -1,7 +1,762 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jérôme Bonvin - Electrical Engineer & AI Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a3a52;
+            --secondary-color: #2d5a7b;
+            --accent-color: #e8a435;
+            --light-bg: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --border-light: #e0e0e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero .title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--accent-color);
+            transition: all 0.3s ease;
+            padding-bottom: 0.25rem;
+        }
+
+        .contact-links a:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 2rem;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .info-box {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-box p {
+            color: var(--text-light);
+            margin: 0.25rem 0;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-light);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .experience-date {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .experience-company {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .experience-description {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-description li {
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
+            padding: 2rem;
+            border-radius: 4px;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .skill-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Education Section */
+        .education-item {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .education-school {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .education-period {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .education-degree {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .education-track {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+
+        /* Languages Section */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .language-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .language-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .language-level {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .language-item:hover .language-level {
+            opacity: 1;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-method a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        .contact-method a:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .title {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                gap: 1rem;
+            }
+
+            .contact-info {
+                gap: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .experience-date {
+                margin-top: 0.5rem;
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
 <body>
-<h1>HAHA made you look!</h1>
-<p>By entering these premises, you acknowledge and accept that you do so at your own risk, and we decline all responsibility for any injuries or harm that may occur.</p>
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Jérôme Bonvin</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Jérôme Antoine Bonvin</h1>
+            <p class="title">Electrical Engineer & AI Specialist</p>
+            <p>MSc in Signal Processing & Machine Learning | Deep Learning for Remote Sensing | SAR Imaging Expert</p>
+            <div class="contact-links">
+                <a href="mailto:jebonvin@ethz.ch">jebonvin@ethz.ch</a>
+                <a href="tel:+41795030843">+41 79 503 08 43</a>
+            </div>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Passionate about AI and Signal Processing</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a dedicated electrical engineer currently pursuing my MSc in Signal Processing and Machine Learning at ETH Zürich. With a strong foundation in deep learning, remote sensing, and image processing, I specialize in developing innovative AI solutions for complex engineering problems.</p>
+                    <p>My work has focused on leveraging machine learning techniques to enhance SAR (Synthetic Aperture Radar) imagery, optimize remote sensing applications, and advance optical imaging technologies. I'm passionate about applying cutting-edge deep learning methods to real-world challenges in earth observation and biomedical imaging.</p>
+                </div>
+                <div>
+                    <div class="info-box">
+                        <h4>Key Focus Areas</h4>
+                        <p>• Deep Learning & Neural Networks</p>
+                        <p>• Remote Sensing & SAR Imaging</p>
+                        <p>• Signal Processing</p>
+                        <p>• Computer Vision</p>
+                        <p>• Python Development</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Personal Information</h4>
+                        <p><strong>Birth Date:</strong> October 10, 1999</p>
+                        <p><strong>Nationality:</strong> Swiss</p>
+                        <p><strong>Location:</strong> Zürich, Switzerland</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">Professional roles and research contributions</p>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">AI Application Engineer</div>
+                        <div class="experience-company">Airbus Defence and Space GmbH, Immenstaad, Germany</div>
+                    </div>
+                    <div class="experience-date">2025</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Developed deep learning models for SAR image enhancement, including speckle reduction and super-resolution techniques</li>
+                    <li>Processed TerraSAR-X and TanDEM-X satellite SAR data to train and validate neural network models</li>
+                    <li>Performed multi-source geoinformatic data analysis and built visualization tools for model output interpretation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Research Assistant</div>
+                        <div class="experience-company">Synthetic Aperture Radar Laboratory, Department of Geography, Universität Zürich</div>
+                    </div>
+                    <div class="experience-date">2024–Current</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Developed a deep learning model in Python for automobile detection in airborne SAR imagery</li>
+                    <li>Achieved 60% accuracy rate in object detection tasks using convolutional neural networks</li>
+                    <li>Contributed to advancing remote sensing techniques for earth observation and monitoring systems</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Bachelor Thesis Researcher</div>
+                        <div class="experience-company">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</div>
+                    </div>
+                    <div class="experience-date">2023–2024</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Synthesized and characterized gold nanoparticles for biomedical imaging applications</li>
+                    <li>Conducted comprehensive analysis of photodegradation under varying laser parameters (wavelength, fluence, exposure time)</li>
+                    <li>Applied remote sensing and image processing principles to enhance optoacoustic imaging resolution using MATLAB and Python</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Research Assistant (SONANO Project)</div>
+                        <div class="experience-company">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</div>
+                    </div>
+                    <div class="experience-date">2022–2023</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Acquired, processed, and analyzed optoacoustic imaging data using MATLAB</li>
+                    <li>Contributed to development of optoacoustic contrast agents for improved cancer detection</li>
+                    <li>Supported experimental design and data analysis for biomedical imaging research</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Teaching Assistant</div>
+                        <div class="experience-company">ETH Zürich - Technische Mechanik (Applied Mechanics)</div>
+                    </div>
+                    <div class="experience-date">Autumn 2021</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Mentored students in fundamental mechanical principles and engineering concepts</li>
+                    <li>Enhanced student academic performance through clear explanations and hands-on problem-solving</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Lifeguard</div>
+                        <div class="experience-company">Swimming Pool, Sion, Switzerland</div>
+                    </div>
+                    <div class="experience-date">Summer 2020–2023</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Ensured swimmer safety and responded effectively to emergencies</li>
+                    <li>Demonstrated strong decision-making and teamwork abilities in high-responsibility environment</li>
+                    <li>Certifications: BLS-AED, Plus Pool, Pro Pool licenses</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Proficiencies and expertise</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>🐍 Python</h4>
+                    <p><strong>Advanced</strong> — Extensive experience in data processing, deep learning frameworks (TensorFlow, PyTorch), remote sensing libraries, and scientific computing.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🔧 MATLAB</h4>
+                    <p><strong>Advanced</strong> — Applied in optoacoustic imaging analysis, signal processing, and remote sensing data manipulation.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🛰️ SAR & Remote Sensing</h4>
+                    <p><strong>Intermediate</strong> — Deep learning for object detection in SAR imagery, TerraSAR-X, TanDEM-X data processing.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🧠 Deep Learning</h4>
+                    <p><strong>Advanced</strong> — CNNs, neural networks, image enhancement, super-resolution, object detection, and model optimization.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>📊 Data Processing</h4>
+                    <p><strong>Advanced</strong> — NumPy, Pandas, data visualization (Matplotlib, Plotly), statistical analysis, and ETL pipelines.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>📑 Office & Documentation</h4>
+                    <p><strong>Advanced</strong> — Microsoft Office (PowerPoint, Excel), LaTeX technical report writing, and professional documentation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Academic background and qualifications</p>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="education-school">ETH Zürich</div>
+                        <div class="education-degree">Master of Science in Electrical Engineering</div>
+                        <div class="education-track">Track: Signal Processing and Machine Learning</div>
+                    </div>
+                    <div class="education-period">2024–Current</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="education-school">ETH Zürich</div>
+                        <div class="education-degree">Bachelor of Science in Electrical Engineering</div>
+                    </div>
+                    <div class="education-period">2020–2024</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="education-school">Lycée Collège des Creusets</div>
+                        <div class="education-degree">High School Diploma</div>
+                        <div class="education-track">Sion, Switzerland</div>
+                    </div>
+                    <div class="education-period">2014–2019</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.1rem;">Languages</h3>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <div class="language-name">French</div>
+                    <div class="language-level">Mother Tongue</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">English</div>
+                    <div class="language-level">Bilingual</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">German</div>
+                    <div class="language-level">Intermediate (B2)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">I'm open to exciting opportunities in AI, remote sensing, and signal processing</p>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <div>✉️ Email</div>
+                    <a href="mailto:jebonvin@ethz.ch">jebonvin@ethz.ch</a>
+                </div>
+                <div class="contact-method">
+                    <div>📱 Phone</div>
+                    <a href="tel:+41795030843">+41 79 503 08 43</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--primary-color); color: white; text-align: center; padding: 2rem; font-size: 0.9rem;">
+        <p>© 2025 Jérôme Bonvin. All rights reserved.</p>
+    </footer>
 </body>
 </html>
