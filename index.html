@@ -4,1208 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jérôme Bonvin - Electrical Engineer & AI Specialist</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #1a3a52;
-            --secondary-color: #2d5a7b;
-            --accent-color: #e8a435;
-            --light-bg: #f8f9fa;
-            --text-dark: #1a1a1a;
-            --text-light: #555;
-            --border-light: #e0e0e0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: #fff;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-            border-bottom: 4px solid var(--accent-color);
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .hero .title {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid var(--accent-color);
-            transition: all 0.3s ease;
-            padding-bottom: 0.25rem;
-        }
-
-        .contact-links a:hover {
-            opacity: 0.8;
-            transform: translateY(-2px);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 0.75rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent-color);
-        }
-
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--accent-color);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 2rem;
-            background-color: var(--accent-color);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            font-size: 1.05rem;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .info-box {
-            background-color: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 4px;
-            margin-bottom: 1.5rem;
-        }
-
-        .info-box h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .info-box p {
-            color: var(--text-light);
-            margin: 0.25rem 0;
-        }
-
-        /* Experience Section */
-        .experience-item {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2.5rem;
-            border-bottom: 1px solid var(--border-light);
-            transition: transform 0.3s ease;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .experience-item:hover {
-            transform: translateX(5px);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .experience-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .experience-date {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .experience-company {
-            color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .experience-description {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .experience-description li {
-            color: var(--text-light);
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .experience-description li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
-            padding: 2rem;
-            border-radius: 4px;
-            border-left: 4px solid var(--accent-color);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .skill-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transform: translateY(-4px);
-        }
-
-        .skill-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .skill-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Education Section */
-        .education-item {
-            background-color: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 4px;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-
-        .education-item:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .education-school-with-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .education-logo {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .education-school {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .education-period {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .education-degree {
-            color: var(--text-light);
-            margin-top: 0.5rem;
-        }
-
-        .education-track {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-top: 0.25rem;
-            font-style: italic;
-        }
-
-        /* Languages Section */
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .language-item {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: var(--light-bg);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .language-item:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .language-name {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
-        }
-
-        .language-level {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .language-item:hover .language-level {
-            opacity: 1;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background-color: var(--light-bg);
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .contact-method {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .contact-method a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: color 0.3s ease;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 0.25rem;
-        }
-
-        .contact-method a:hover {
-            color: var(--accent-color);
-            border-bottom-color: var(--accent-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero .title {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                gap: 1rem;
-            }
-
-            .contact-info {
-                gap: 1.5rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .experience-header {
-                flex-direction: column;
-            }
-
-            .experience-date {
-                margin-top: 0.5rem;
-                align-self: flex-start;
-            }
-        }
-
-        /* Gallery Styles */
-        .project-logo {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            margin-right: 1rem;
-            vertical-align: middle;
-        }
-
-        .experience-company-with-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-
-        .gallery-toggle {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .gallery-toggle:hover {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-        }
-
-        .gallery {
-            display: none;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--border-light);
-        }
-
-        .gallery.active {
-            display: block;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            max-height: 250px;
-            background-color: var(--light-bg);
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-item img,
-        .gallery-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-item a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-        }
-
-        .gallery-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.75rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .pdf-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            margin-top: 0.75rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--light-bg);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .pdf-link:hover {
-            background-color: var(--accent-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .website-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            margin-top: 0.5rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.25rem;
-        }
-
-        .website-link:hover {
-            opacity: 0.8;
-            transform: translateX(4px);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.95);
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content img,
-        .modal-content video {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .modal-controls {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 1rem;
-            z-index: 1001;
-        }
-
-        .modal-btn {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .modal-btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: none;
-            border: none;
-            transition: transform 0.3s ease;
-            z-index: 1001;
-        }
-
-        .close-btn:hover {
-            transform: scale(1.2);
-        }
-
-        @media (max-width: 600px) {
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .hero {
-                padding: 3rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .project-logo {
-                width: 40px;
-                height: 40px;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-controls {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .modal-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/summary.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/hobbies.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <!-- Media Modal -->
-    <div id="mediaModal" class="modal" onclick="closeMediaModal(event)">
-        <button class="close-btn" onclick="closeMediaModal()">×</button>
-        <div class="modal-controls">
-            <button class="modal-btn" id="downloadBtn" onclick="downloadMedia(event)">📥 Download</button>
-            <button class="modal-btn" onclick="closeMediaModal()">✕ Close</button>
-        </div>
-        <div class="modal-content" id="modalContent" onclick="event.stopPropagation()">
-            <!-- Content will be inserted here -->
-        </div>
-    </div>
-
-    <!-- Header/Navigation -->
-    <header>
-        <nav>
-            <div class="logo">Jérôme Bonvin</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Jérôme Bonvin</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Jérôme Antoine Bonvin</h1>
-            <p class="title">Electrical Engineer & AI Specialist</p>
-            <p>MSc in Signal Processing & Machine Learning | Deep Learning for Remote Sensing | SAR Imaging Expert</p>
-            <div class="contact-links">
-                <a href="mailto:jerome.bonvin@hotmail.com">jerome.bonvin@hotmail.com</a>
-            </div>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <h1>Jérôme Bonvin</h1>
+            <p class="subtitle">AI Engineer • Remote Sensing Specialist • Signal Processing</p>
         </div>
     </section>
 
-    <main>
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Passionate about AI and Signal Processing</p>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a dedicated electrical engineer currently pursuing my MSc in Signal Processing and Machine Learning at ETH Zürich. With a strong foundation in deep learning, remote sensing, and image processing, I specialize in developing innovative AI solutions for complex engineering problems.</p>
-                    <p>My work has focused on leveraging machine learning techniques to enhance SAR (Synthetic Aperture Radar) imagery, optimize remote sensing applications, and advance optical imaging technologies. I'm passionate about applying cutting-edge deep learning methods to real-world challenges in earth observation and biomedical imaging.</p>
-                </div>
-                <div>
-                    <img src="radartower.jpg" alt="Radar Tower - Remote Sensing" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 1.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <div class="info-box">
-                        <h4>Key Focus Areas</h4>
-                        <p>• Deep Learning & Neural Networks</p>
-                        <p>• Remote Sensing & SAR Imaging</p>
-                        <p>• Signal Processing</p>
-                        <p>• Computer Vision</p>
-                        <p>• Python Development</p>
-                    </div>
-                    <div class="info-box">
-                        <h4>Personal Information</h4>
-                        <p><strong>Birth Date:</strong> October 10, 1999</p>
-                        <p><strong>Nationality:</strong> Swiss</p>
-                        <p><strong>Location:</strong> Zürich, Switzerland</p>
-                    </div>
-                </div>
+    <!-- Summary Section -->
+    <section id="about" class="summary">
+        <h2 class="summary-title">About</h2>
+        <p class="summary-text">
+            ETH Zurich graduate in Electrical Engineering specializing in deep learning and remote sensing. Currently developing AI solutions for SAR image enhancement and earth observation at Airbus Defence and Space.
+        </p>
+        <div class="keypoints">
+            <div class="keypoint">
+                <div class="keypoint-icon">🧠</div>
+                <div class="keypoint-title">Deep Learning</div>
+                <div class="keypoint-text">Neural networks, computer vision, image enhancement</div>
             </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="section-title">Experience</h2>
-            <p class="section-subtitle">Professional roles and research contributions</p>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-company-with-logo">
-                            <img src="logos/Airbus_Defense_and_Space.png" alt="Airbus Logo" class="project-logo">
-                            <div>
-                                <div class="experience-title">AI Application Engineer</div>
-                                <div class="experience-company">
-                                    <a href="https://space-solutions.airbus.com/imagery/our-optical-and-radar-satellite-imagery/radar-constellation/" target="_blank" class="website-link">Airbus Defence and Space GmbH, Immenstaad, Germany</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience-date">2025</div>
-                </div>
-                <ul class="experience-description">
-                    <li>Developed deep learning models for SAR image enhancement, including speckle reduction and super-resolution techniques</li>
-                    <li>Processed TerraSAR-X and TanDEM-X satellite SAR data to train and validate neural network models</li>
-                    <li>Performed multi-source geoinformatic data analysis and built visualization tools for model output interpretation</li>
-                </ul>
+            <div class="keypoint">
+                <div class="keypoint-icon">🛰️</div>
+                <div class="keypoint-title">Remote Sensing</div>
+                <div class="keypoint-text">SAR imagery, earth observation, object detection</div>
             </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-company-with-logo">
-                            <img src="logos/sarlab_logo.png" alt="SAR Lab Logo" class="project-logo">
-                            <div>
-                                <div class="experience-title">Research Assistant</div>
-                                <div class="experience-company">
-                                    <a href="https://www.geo.uzh.ch/en/units/rsws/research/SAR_Lab/SARLab-Computational-SAR.html" target="_blank" class="website-link">Synthetic Aperture Radar Laboratory, Department of Geography, Universität Zürich</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience-date">2024–Current</div>
-                </div>
-                <ul class="experience-description">
-                    <li>Developed a deep learning model in Python for automobile detection in airborne SAR imagery</li>
-                    <li>Achieved 60% accuracy rate in object detection tasks using convolutional neural networks</li>
-                    <li>Contributed to advancing remote sensing techniques for earth observation and monitoring systems</li>
-                </ul>
-                <button class="gallery-toggle" onclick="toggleGallery('sarlab-gallery')">📸 View Project Gallery</button>
-                <div class="gallery" id="sarlab-gallery">
-                    <div class="gallery-grid">
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <img src="sarlab/Detection.jpg" alt="Vehicle Detection Results" style="cursor: pointer;">
-                            <div class="gallery-label">Vehicle Detection Results</div>
-                        </div>
-                        <div class="gallery-item">
-                            <a href="sarlab/Vehicle_Detection.pdf" target="_blank">
-                                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; font-weight: bold; flex-direction: column; gap: 0.5rem;">
-                                    <div style="font-size: 2rem;">📄</div>
-                                    <div>Vehicle Detection Report</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <video autoplay muted loop style="width: 100%; height: 100%; cursor: pointer;">
-                                <source src="sarlab/drone_imaging.gif" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="gallery-label">Drone Imaging Data</div>
-                        </div>
-                    </div>
-                    <a href="sarlab/Vehicle_Detection.pdf" class="pdf-link" target="_blank">📥 Download Full Report</a>
-                </div>
+            <div class="keypoint">
+                <div class="keypoint-icon">🐍</div>
+                <div class="keypoint-title">Python Developer</div>
+                <div class="keypoint-text">TensorFlow, PyTorch, data processing</div>
             </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-company-with-logo">
-                            <img src="logos/eth_logo.png" alt="ETH Logo" class="project-logo">
-                            <div>
-                                <div class="experience-title">Bachelor Thesis Researcher</div>
-                                <div class="experience-company">
-                                    <a href="https://www.razanskylab.org/" target="_blank" class="website-link">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience-date">2023–2024</div>
-                </div>
-                <ul class="experience-description">
-                    <li>Synthesized and characterized gold nanoparticles for biomedical imaging applications</li>
-                    <li>Conducted comprehensive analysis of photodegradation under varying laser parameters (wavelength, fluence, exposure time)</li>
-                    <li>Applied remote sensing and image processing principles to enhance optoacoustic imaging resolution using MATLAB and Python</li>
-                </ul>
-                <button class="gallery-toggle" onclick="toggleGallery('thesis-gallery')">📸 View Project Gallery</button>
-                <div class="gallery" id="thesis-gallery">
-                    <div class="gallery-grid">
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <img src="Sonano/Nanoparticles.png" alt="Gold Nanoparticles Structure" style="cursor: pointer;">
-                            <div class="gallery-label">Gold Nanoparticles</div>
-                        </div>
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <img src="Sonano/Imaging_myself.jpg" alt="Optoacoustic Imaging Results" style="cursor: pointer;">
-                            <div class="gallery-label">Optoacoustic Imaging</div>
-                        </div>
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <img src="Sonano/my_veins.gif" alt="Vascular Imaging" style="cursor: pointer;">
-                            <div class="gallery-label">Vascular Imaging Demo</div>
-                        </div>
-                        <div class="gallery-item">
-                            <a href="Sonano/Bachelor_Thesis.pdf" target="_blank">
-                                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; font-weight: bold; flex-direction: column; gap: 0.5rem;">
-                                    <div style="font-size: 2rem;">📄</div>
-                                    <div>Bachelor Thesis</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <a href="Sonano/Bachelor_Thesis.pdf" class="pdf-link" target="_blank">📥 Download Full Thesis</a>
-                </div>
+            <div class="keypoint">
+                <div class="keypoint-icon">🔬</div>
+                <div class="keypoint-title">Research</div>
+                <div class="keypoint-text">Biomedical imaging, signal processing</div>
             </div>
+        </div>
+    </section>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-company-with-logo">
-                            <img src="logos/sonano_logo.png" alt="SONANO Logo" class="project-logo">
-                            <div>
-                                <div class="experience-title">Research Assistant (SONANO Project)</div>
-                                <div class="experience-company">
-                                    <a href="https://www.razanskylab.org/" target="_blank" class="website-link">Razanasky Lab, Functional and Molecular Imaging Laboratory, ETH Zürich</a>
-                                </div>
-                            </div>
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="timeline-container">
+            <h2 class="timeline-title">Timeline of Education & Projects</h2>
+            <div class="timeline">
+                <!-- 1. Education: ETH MSc 2024 - Current (MOST RECENT) -->
+                <div class="timeline-item active" onclick="openFile(this)" data-link="https://ethz.ch">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            📷 Image placeholder
+                        </div>
+                        <div class="timeline-year">2024 – Current</div>
+                        <div class="timeline-project">ETH MSc in Electrical Engineering</div>
+                        <div class="timeline-description">
+                            Signal Processing & Machine Learning track. Advanced studies in deep learning, signal processing, and AI applications.
                         </div>
                     </div>
-                    <div class="experience-date">2022–2023</div>
                 </div>
-                <ul class="experience-description">
-                    <li>Acquired, processed, and analyzed optoacoustic imaging data using MATLAB</li>
-                    <li>Contributed to development of optoacoustic contrast agents for improved cancer detection</li>
-                    <li>Supported experimental design and data analysis for biomedical imaging research</li>
-                </ul>
-                <button class="gallery-toggle" onclick="toggleGallery('sonano-gallery')">📸 View Project Gallery</button>
-                <div class="gallery" id="sonano-gallery">
-                    <div class="gallery-grid">
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <img src="Sonano/Nanoparticles.png" alt="Nanoparticle Visualization" style="cursor: pointer;">
-                            <div class="gallery-label">Nanoparticle Design</div>
+
+                <!-- 2. Project: Airbus 2025 -->
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.airbus.com">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/airbus_logo.png" alt="Airbus" onerror="this.style.display='none'">
                         </div>
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <video autoplay muted loop style="width: 100%; height: 100%; cursor: pointer;">
-                                <source src="Sonano/Walenstadt_1385019F-F1AF-4D47-A507-70CAD36BFFA3.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="gallery-label">Field Imaging</div>
+                        <div class="timeline-image">
+                            📷 Image placeholder
                         </div>
-                        <div class="gallery-item" onclick="openMediaModal(this)">
-                            <video autoplay muted loop style="width: 100%; height: 100%; cursor: pointer;">
-                                <source src="Sonano/sonano_laser.mov" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="gallery-label">Laser Setup</div>
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-project">AI Application Engineer</div>
+                        <div class="timeline-description">
+                            Developed deep learning models for SAR image enhancement. Working with TerraSAR-X and TanDEM-X satellite data on speckle reduction and super-resolution techniques.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Project: SAR Lab 2024 – Current -->
+                <div class="timeline-item" onclick="openFile(this)" data-file="sarlab/Vehicle_Detection.pdf">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/sarlab_logo.png" alt="SAR Lab" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            📷 Image placeholder
+                        </div>
+                        <div class="timeline-year">2024 – Current</div>
+                        <div class="timeline-project">SAR Lab Research</div>
+                        <div class="timeline-description">
+                            Developed CNN model for automobile detection in airborne SAR imagery. Achieved 60% accuracy using deep learning for earth observation applications.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Project: Bachelor Thesis 2023-2024 -->
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            📷 Image placeholder
+                        </div>
+                        <div class="timeline-year">2023 – 2024</div>
+                        <div class="timeline-project">Bachelor Thesis</div>
+                        <div class="timeline-description">
+                            Synthesized gold nanoparticles and analyzed photodegradation for optoacoustic imaging applications. Enhanced imaging resolution using MATLAB and Python.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Education: ETH BSc 2020 - 2024 -->
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            📷 Image placeholder
+                        </div>
+                        <div class="timeline-year">2020 – 2024</div>
+                        <div class="timeline-project">ETH BSc in Electrical Engineering</div>
+                        <div class="timeline-description">
+                            Foundation in electrical engineering with focus on signal processing, digital systems, and applied mathematics.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Project: SONANO 2022-2023 -->
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.eth-spin-off.ch">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/sonano_logo.png" alt="SONANO" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            📷 Image placeholder
+                        </div>
+                        <div class="timeline-year">2022 – 2023</div>
+                        <div class="timeline-project">SONANO Project</div>
+                        <div class="timeline-description">
+                            Developed optoacoustic contrast agents for enhanced cancer detection. Processed and analyzed imaging data using advanced signal processing techniques.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Education: Lycée 2014 - 2019 (OLDEST) -->
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://lycee-creusets.ch">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/lycee_logo.png" alt="Lycée" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            📷 Image placeholder
+                        </div>
+                        <div class="timeline-year">2019</div>
+                        <div class="timeline-project">High School Diploma</div>
+                        <div class="timeline-description">
+                            Lycée Collège des Creusets. Foundation in sciences and mathematics with focus on physics and mathematics.
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-company-with-logo">
-                            <img src="logos/eth_logo.png" alt="ETH Logo" class="project-logo">
-                            <div>
-                                <div class="experience-title">Teaching Assistant</div>
-                                <div class="experience-company">
-                                    <a href="https://www.ethz.ch/" target="_blank" class="website-link">ETH Zürich - Technische Mechanik (Applied Mechanics)</a>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Hidden Galleries -->
+        </div>
+    </section>
+
+    <!-- Other Sections -->
+    <div class="other-sections">
+        <!-- Contact -->
+        <div class="section" id="contact">
+            <div class="contact-section">
+                <h2 class="section-heading" style="margin-bottom: 1rem;">Get in Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <a href="mailto:jerome.bonvin@hotmail.com">jerome.bonvin@hotmail.com</a>
                     </div>
-                    <div class="experience-date">Autumn 2021</div>
-                </div>
-                <ul class="experience-description">
-                    <li>Mentored students in fundamental mechanical principles and engineering concepts</li>
-                    <li>Enhanced student academic performance through clear explanations and hands-on problem-solving</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Lifeguard</div>
-                        <div class="experience-company">Swimming Pool, Sion, Switzerland</div>
+                    <div class="contact-method">
+                        <a href="mailto:jebonvin@ethz.ch">jebonvin@ethz.ch</a>
                     </div>
-                    <div class="experience-date">Summer 2020–2023</div>
-                </div>
-                <ul class="experience-description">
-                    <li>Ensured swimmer safety and responded effectively to emergencies</li>
-                    <li>Demonstrated strong decision-making and teamwork abilities in high-responsibility environment</li>
-                    <li>Certifications: BLS-AED, Plus Pool, Pro Pool licenses</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title">Technical Skills</h2>
-            <p class="section-subtitle">Proficiencies and expertise</p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>🐍 Python</h4>
-                    <p><strong>Advanced</strong> — Extensive experience in data processing, deep learning frameworks (TensorFlow, PyTorch), remote sensing libraries, and scientific computing.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>🔧 MATLAB</h4>
-                    <p><strong>Advanced</strong> — Applied in optoacoustic imaging analysis, signal processing, and remote sensing data manipulation.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>🛰️ SAR & Remote Sensing</h4>
-                    <p><strong>Intermediate</strong> — Deep learning for object detection in SAR imagery, TerraSAR-X, TanDEM-X data processing.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>🧠 Deep Learning</h4>
-                    <p><strong>Advanced</strong> — CNNs, neural networks, image enhancement, super-resolution, object detection, and model optimization.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>📊 Data Processing</h4>
-                    <p><strong>Advanced</strong> — NumPy, Pandas, data visualization (Matplotlib, Plotly), statistical analysis, and ETL pipelines.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>📑 Office & Documentation</h4>
-                    <p><strong>Advanced</strong> — Microsoft Office (PowerPoint, Excel), LaTeX technical report writing, and professional documentation.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- Education Section -->
-        <section id="education">
-            <h2 class="section-title">Education</h2>
-            <p class="section-subtitle">Academic background and qualifications</p>
+    <!-- Media Modal -->
+    <div id="mediaModal" class="modal" onclick="closeMediaModal(event)">
+        <button class="close-btn" onclick="closeMediaModal()">×</button>
+        <div class="modal-controls">
+            <button class="modal-btn" id="downloadBtn" onclick="downloadFile(event)">📥 Download</button>
+            <button class="modal-btn" onclick="closeMediaModal()">✕ Close</button>
+        </div>
+        <div class="modal-content" id="modalContent" onclick="event.stopPropagation()"></div>
+    </div>
 
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="education-school-with-logo">
-                        <img src="logos/eth_logo.png" alt="ETH Logo" class="education-logo">
-                        <div>
-                            <div class="education-school">
-                                <a href="https://www.ethz.ch/" target="_blank" class="website-link">ETH Zürich</a>
-                            </div>
-                            <div class="education-degree">Master of Science in Electrical Engineering</div>
-                            <div class="education-track">Track: Signal Processing and Machine Learning</div>
-                        </div>
-                    </div>
-                    <div class="education-period">2024–Current</div>
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies">
+        <div class="hobbies-container">
+            <h2 class="hobbies-title">Interests & Hobbies</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">🏔️</div>
+                    <h3>Mountain Sports</h3>
+                    <p>Skiing, hiking, and climbing in the Swiss Alps</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎮</div>
+                    <h3>Gaming</h3>
+                    <p>Strategy games, competitive esports, game development</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">📚</div>
+                    <h3>Reading</h3>
+                    <p>Science fiction, technical books, research papers</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎵</div>
+                    <h3>Music</h3>
+                    <p>Playing guitar, discovering new genres, live concerts</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🍳</div>
+                    <h3>Cooking</h3>
+                    <p>Experimenting with international cuisines</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🔬</div>
+                    <h3>Science</h3>
+                    <p>Physics, AI, quantum computing, and innovation</p>
                 </div>
             </div>
-
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="education-school-with-logo">
-                        <img src="logos/eth_logo.png" alt="ETH Logo" class="education-logo">
-                        <div>
-                            <div class="education-school">
-                                <a href="https://www.ethz.ch/" target="_blank" class="website-link">ETH Zürich</a>
-                            </div>
-                            <div class="education-degree">Bachelor of Science in Electrical Engineering</div>
-                        </div>
-                    </div>
-                    <div class="education-period">2020–2024</div>
-                </div>
-            </div>
-
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="education-school-with-logo">
-                        <img src="logos/lycee_logo.png" alt="Lycée Logo" class="education-logo" style="height: 40px;">
-                        <div>
-                            <div class="education-school">
-                                <a href="https://lccreusets.ch/" target="_blank" class="website-link">Lycée Collège des Creusets</a>
-                            </div>
-                            <div class="education-degree">High School Diploma</div>
-                            <div class="education-track">Sion, Switzerland</div>
-                        </div>
-                    </div>
-                    <div class="education-period">2014–2019</div>
-                </div>
-            </div>
-
-            <h3 style="margin-top: 2rem; margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.1rem;">Languages</h3>
-            <div class="languages-grid">
-                <div class="language-item">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🇫🇷</div>
-                    <div class="language-name">French</div>
-                    <div class="language-level">Mother Tongue</div>
-                </div>
-                <div class="language-item">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🇬🇧</div>
-                    <div class="language-name">English</div>
-                    <div class="language-level">Bilingual</div>
-                </div>
-                <div class="language-item">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🇩🇪</div>
-                    <div class="language-name">German</div>
-                    <div class="language-level">Intermediate (B2)</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">I'm open to exciting opportunities in AI, remote sensing, and signal processing</p>
-            <div class="contact-info">
-                <div class="contact-method">
-                    <div>✉️ Email</div>
-                    <a href="mailto:jerome.bonvin@hotmail.com">jerome.bonvin@hotmail.com</a>
-                </div>
-                <div class="contact-method">
-                    <div>� ETH Email</div>
-                    <a href="mailto:jebonvin@ethz.ch">jebonvin@ethz.ch</a>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer style="background-color: var(--primary-color); color: white; text-align: center; padding: 2rem; font-size: 0.9rem;">
-        <p>© 2025 Jérôme Bonvin. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.85rem;">This website was created with GitHub Copilot</p>
+    <footer>
+        <p>© 2026 Jérôme Bonvin. All rights reserved.</p>
+        <p>This website was created with GitHub Copilot</p>
     </footer>
 
-    <script>
-        function toggleGallery(galleryId) {
-            const gallery = document.getElementById(galleryId);
-            gallery.classList.toggle('active');
-        }
-
-        function openMediaModal(element) {
-            const modal = document.getElementById('mediaModal');
-            const modalContent = document.getElementById('modalContent');
-            const downloadBtn = document.getElementById('downloadBtn');
-            
-            // Get the media element (img or video)
-            const media = element.querySelector('img') || element.querySelector('video');
-            
-            if (!media) return;
-            
-            let mediaClone;
-            if (media.tagName === 'IMG') {
-                mediaClone = document.createElement('img');
-                mediaClone.src = media.src;
-                mediaClone.alt = media.alt;
-                downloadBtn.onclick = () => downloadFile(media.src, media.alt);
-            } else {
-                mediaClone = document.createElement('video');
-                mediaClone.src = media.querySelector('source').src;
-                mediaClone.controls = true;
-                mediaClone.autoplay = true;
-                downloadBtn.onclick = () => downloadFile(media.querySelector('source').src, 'video');
-            }
-            
-            modalContent.innerHTML = '';
-            modalContent.appendChild(mediaClone);
-            modal.classList.add('active');
-        }
-
-        function closeMediaModal(event) {
-            const modal = document.getElementById('mediaModal');
-            // Only close if clicking on the modal background, not on content
-            if (!event || event.target === modal) {
-                modal.classList.remove('active');
-            }
-        }
-
-        function downloadFile(url, filename) {
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = filename || url.split('/').pop();
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        // Close modal when pressing Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.getElementById('mediaModal').classList.remove('active');
-            }
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
