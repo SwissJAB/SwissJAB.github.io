@@ -62,7 +62,27 @@ function initializeTimeline() {
         timelineSection.classList.add('bg-event-1');
         console.log('Timeline initialized - set to event 1');
     }
-}
+    
+    // Scroll-based parallax effect (distance-related, not time-based)
+    window.addEventListener('scroll', () => {
+        const rect = timelineSection.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
+        const viewportHeight = window.innerHeight;
+        
+        // Calculate how far through the section the user has scrolled (0 to 1)
+        // Clamped to prevent jumps outside the visible range
+        let scrollProgress = (viewportHeight - sectionTop) / (viewportHeight + sectionHeight);
+        scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+        
+        // Only apply parallax when section is in view
+        if (sectionTop < viewportHeight && sectionTop + sectionHeight > 0) {
+            // Pan smoothly from 0% to 50% as user scrolls through the event
+            const yOffset = scrollProgress * 5; // 0% to 50%
+            timelineSection.style.backgroundPosition = `center ${yOffset}%`;
+        }
+    });
+        }
 
 // Open file or URL from timeline item
 function openFile(element) {

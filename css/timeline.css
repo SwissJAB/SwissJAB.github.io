@@ -7,16 +7,6 @@
     background-size: cover;
     background-position: center center;
     transition: opacity 0.6s ease-in-out;
-    animation: parallaxShift 60s ease-in-out infinite;
-}
-
-@keyframes parallaxShift {
-    0%, 100% {
-        background-position: center center;
-    }
-    50% {
-        background-position: center 2%;
-    }
 }
 
 .timeline-section.fading {
@@ -24,31 +14,31 @@
 }
 
 .timeline-section.bg-event-1 {
-    background-image: url('../Sonano/Nanoparticles.png');
+    background-image: url('../Background_Images/ethz_masters.jpg');
 }
 
 .timeline-section.bg-event-2 {
-    background-image: url('../sarlab/Detection.jpg');
+    background-image: url('../Background_Images/airbus_internship.jpg');
 }
 
 .timeline-section.bg-event-3 {
-    background-image: url('../Sonano/Nanoparticles.png');
+    background-image: url('../Background_Images/sarlab.jpg');
 }
 
 .timeline-section.bg-event-4 {
-    background-image: url('../sarlab/Detection.jpg');
+    background-image: url('../Background_Images/bachelor_thesis.png');
 }
 
 .timeline-section.bg-event-5 {
-    background-image: url('../Sonano/Nanoparticles.png');
+    background-image: url('../Background_Images/ethz_bachelor.jpg');
 }
 
 .timeline-section.bg-event-6 {
-    background-image: url('.../sarlab/Detection.jpg');
+    background-image: url('../Background_Images/sonano.png');
 }
 
 .timeline-section.bg-event-7 {
-    background-image: url('../Sonano/Nanoparticles.png');
+    background-image: url('../Background_Images/LCC.jpg');
 }
 
 .timeline-container {
