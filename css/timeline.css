@@ -14,7 +14,7 @@
 }
 
 .timeline-section.bg-event-1 {
-    background-image: url('../Background_Images/ethz_masters.jpg');
+    background-image: url('../Background_Images/ethz_masters.png');
 }
 
 .timeline-section.bg-event-2 {
@@ -38,6 +38,10 @@
 }
 
 .timeline-section.bg-event-7 {
+    background-image: url('../Background_Images/lifeguard.jpg');
+}
+
+.timeline-section.bg-event-8 {
     background-image: url('../Background_Images/LCC.jpg');
 }
 
@@ -52,7 +56,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 4rem;
-    color: var(--primary-color);
+    color: white; /*var(--primary-color);*/
     text-align: center;
 }
 

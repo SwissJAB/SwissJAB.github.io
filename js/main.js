@@ -29,7 +29,7 @@ function initializeTimeline() {
                     
                     setTimeout(() => {
                         // Remove all background classes
-                        timelineSection.classList.remove('bg-event-1', 'bg-event-2', 'bg-event-3', 'bg-event-4', 'bg-event-5', 'bg-event-6', 'bg-event-7');
+                        timelineSection.classList.remove('bg-event-1', 'bg-event-2', 'bg-event-3', 'bg-event-4', 'bg-event-5', 'bg-event-6', 'bg-event-7', 'bg-event-8');
                         
                         // Add current event background class
                         const eventClass = `bg-event-${itemIndex + 1}`;
