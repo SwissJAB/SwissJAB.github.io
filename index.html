@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/hobbies.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -23,6 +24,7 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -37,32 +39,10 @@
 
     <!-- Summary Section -->
     <section id="about" class="summary">
-        <h2 class="summary-title">About (Will change this part)</h2>
+        <h2 class="summary-title">About Me</h2>
         <p class="summary-text">
-            ETH Zurich graduate in Electrical Engineering specializing in deep learning and remote sensing. Currently developing AI solutions for SAR image enhancement and earth observation at Airbus Defence and Space.
+            I am a passionate and driven <b>Electrical Engineering</b> ⚡ from <b>ETH Zurich</b> 🎓. My expertise lies in <b>Signal Processing</b> and <b>Machine Learning</b> 🧠, with a focus on developing innovative solutions for <b>remote sensing</b> 🛰️ and <b>biomedical imaging</b> 🔬. I have hands-on experience in <b>deep learning</b> for <b>SAR</b> image enhancement with <b>Airbus Defence and Space</b> ✈️, and have developed CNN models for object detection at the University of Zürich. I am always eager to tackle new challenges and learn new technologies.
         </p>
-        <div class="keypoints">
-            <div class="keypoint">
-                <div class="keypoint-icon">🧠</div>
-                <div class="keypoint-title">Deep Learning</div>
-                <div class="keypoint-text">Neural networks, computer vision, image enhancement</div>
-            </div>
-            <div class="keypoint">
-                <div class="keypoint-icon">🛰️</div>
-                <div class="keypoint-title">Remote Sensing</div>
-                <div class="keypoint-text">SAR imagery, earth observation, object detection</div>
-            </div>
-            <div class="keypoint">
-                <div class="keypoint-icon">🐍</div>
-                <div class="keypoint-title">Python Developer</div>
-                <div class="keypoint-text">TensorFlow, PyTorch, data processing</div>
-            </div>
-            <div class="keypoint">
-                <div class="keypoint-icon">🔬</div>
-                <div class="keypoint-title">Research</div>
-                <div class="keypoint-text">Biomedical imaging, signal processing</div>
-            </div>
-        </div>
     </section>
 
     <!-- Timeline Section -->
@@ -70,6 +50,7 @@
         <div class="timeline-container">
             <h2 class="timeline-title">Timeline of Education & Projects</h2>
             <div class="timeline">
+
                 <!-- 1. Education: ETH MSc 2024 - Current (MOST RECENT) -->
                 <div class="timeline-item active" onclick="openFile(this)" data-link="https://ethz.ch">
                     <div class="timeline-dot"></div>
@@ -78,12 +59,12 @@
                             <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/ethz_masters.png" alt="Airbus" onerror="this.style.display='none'">
+                            <img src="Element_Images/ethz_masters.png" alt="ETHZ" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">2024 - Current</div>
+                        <div class="timeline-year">February 2024 - Current</div>
                         <div class="timeline-project">ETH MSc in Electrical Engineering</div>
                         <div class="timeline-description">
-                            Signal Processing & Machine Learning track. Advanced studies in deep learning, signal processing, and AI applications.
+                            Track: Signal Processing & Machine Learning.
                         </div>
                     </div>
                 </div>
@@ -98,7 +79,7 @@
                         <div class="timeline-image">
                             <img src="Element_Images/airbus_internship.jpg" alt="UZH" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">2025</div>
+                        <div class="timeline-year">June 2025 - December 2025</div>
                         <div class="timeline-project">AI Application Engineer</div>
                         <div class="timeline-description">
                             Developed deep learning models for SAR image enhancement. Working with TerraSAR-X and TanDEM-X satellite data on speckle reduction and super-resolution techniques.
@@ -116,7 +97,7 @@
                         <div class="timeline-image">
                             <img src="Element_Images/sarlab.gif" alt="UZH" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">2024 - 2025</div>
+                        <div class="timeline-year">March 2024 - May 2025</div>
                         <div class="timeline-project">SAR Lab Research</div>
                         <div class="timeline-description">
                             Developed CNN model for automobile detection in airborne SAR imagery. Achieved 60% accuracy using deep learning for earth observation applications.
@@ -124,25 +105,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Project: Bachelor Thesis 2023-2024 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-logo">
-                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
-                        </div>
-                        <div class="timeline-image">
-                            <img src="Element_Images/bachelor_thesis.JPG" alt="ETH" onerror="this.style.display='none'">
-                        </div>
-                        <div class="timeline-year">2023 - 2024</div>
-                        <div class="timeline-project">Bachelor Thesis</div>
-                        <div class="timeline-description">
-                            Synthesized gold nanoparticles and analyzed photodegradation for optoacoustic imaging applications. Enhanced imaging resolution using MATLAB and Python.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Education: ETH BSc 2020 - 2024 -->
+                <!-- 4. Education: ETH BSc 2020 - 2024 -->
                 <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -152,10 +115,28 @@
                         <div class="timeline-image">
                             <img src="Element_Images/ethz_bachelor.jpg" alt="ETH" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">2020 - 2024</div>
+                        <div class="timeline-year">September 2020 - February 2024</div>
                         <div class="timeline-project">ETH BSc in Electrical Engineering</div>
                         <div class="timeline-description">
                             Foundation in electrical engineering with focus on mathematics, computer science and physics.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 5. Project: Bachelor Thesis 2023-2024 -->
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            <img src="Element_Images/bachelor_thesis.JPG" alt="ETH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-year">August 2023 - January 2024</div>
+                        <div class="timeline-project">Bachelor Thesis</div>
+                        <div class="timeline-description">
+                            Synthesized gold nanoparticles and analyzed photodegradation for optoacoustic imaging applications. Enhanced imaging resolution using MATLAB and Python.
                         </div>
                     </div>
                 </div>
@@ -170,7 +151,7 @@
                         <div class="timeline-image">
                             <img src="Element_Images/sonano.gif" alt="ETH" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">2022 - 2023</div>
+                        <div class="timeline-year">September 2022 - July 2023</div>
                         <div class="timeline-project">SONANO Project</div>
                         <div class="timeline-description">
                             Developed optoacoustic contrast agents for enhanced cancer detection. Processed and analyzed imaging data using advanced signal processing techniques.
@@ -188,7 +169,7 @@
                         <div class="timeline-image">
                             <img src="Element_Images/lifeguard.png" alt="Lycée" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">2020 - 2023</div>
+                        <div class="timeline-year">Summer 2020 - 2023</div>
                         <div class="timeline-project">Lifeguard Summer Job</div>
                         <div class="timeline-description">
                             Part-time lifeguard responsible for ensuring swimmer safety and responding to emergencies.
@@ -196,6 +177,23 @@
                     </div>
                 </div>
     
+                <!-- 9. Military: 2019 - 2020  -->
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/military.png" alt="Military" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            <img src="Element_Images/military.JPEG" alt="Military" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-year">July 2019 - May 2020</div>
+                        <div class="timeline-project">Military Service</div>
+                        <div class="timeline-description">
+                            Completed mandatory military service in the Swiss Army as a NBC soldier (Nuclear, Biological, Chemical) and medical driver.
+                        </div>
+                    </div>
+                </div>
 
                 <!-- 8. Education: Lycée 2014 - 2019 (OLDEST) -->
                 <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/">
@@ -205,18 +203,17 @@
                             <img src="logos/lycee_logo.svg" alt="Lycée" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            📷 Image placeholder
+                            <img src="Element_Images/lcc.JPEG" alt="Lycée" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">2014 - 2019</div>
+                        <div class="timeline-year">August 2014 - June 2019</div>
                         <div class="timeline-project">High School Diploma</div>
                         <div class="timeline-description">
                             Lycée Collège des Creusets. Foundation in sciences and mathematics with focus on physics and mathematics.
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Hidden Galleries -->
+            </div>
         </div>
     </section>
 
@@ -233,46 +230,82 @@
     <!-- Hobbies Section -->
     <section id="hobbies" class="hobbies">
         <div class="hobbies-container">
-            <h2 class="hobbies-title">Interests & Hobbies (will also need to change this part)</h2>
+            <h2 class="hobbies-title">Interests & Hobbies</h2>
             <div class="hobbies-grid">
                 <div class="hobby-card">
-                    <div class="hobby-icon">🏔️</div>
-                    <h3>Mountain Sports</h3>
-                    <p>Skiing, hiking, and climbing in the Swiss Alps</p>
+                    <div class="hobby-image">
+                        <img src="Element_Images/hobby_swim.jpg" alt="Swimming">
+                    </div>
+                    <div class="hobby-content">
+                        <div class="hobby-header">
+                            <h3>Swimming</h3>
+                            <div class="hobby-icon">🏊</div>
+                        </div>
+                        <p>Won the Walliser Championship in 2016</p>
+                    </div>
                 </div>
+                
                 <div class="hobby-card">
-                    <div class="hobby-icon">🎮</div>
-                    <h3>Gaming</h3>
-                    <p>Strategy games, competitive esports, game development</p>
+                    <div class="hobby-image">
+                        <img src="Element_Images/hobby_hiking.JPEG" alt="Mountain Sports">
+                    </div>
+                    <div class="hobby-content">
+                        <div class="hobby-header">
+                            <h3>Mountain Sports</h3>
+                            <div class="hobby-icon">🏔️</div>
+                        </div>
+                        <p>Skiing, hiking, and climbing in the Swiss Alps</p>
+                    </div>
                 </div>
+
                 <div class="hobby-card">
-                    <div class="hobby-icon">📚</div>
-                    <h3>Reading</h3>
-                    <p>Science fiction, technical books, research papers</p>
+                    <div class="hobby-image">
+                        <img src="Element_Images/hobby_gliding.jpg" alt="Gliding">
+                    </div>
+                    <div class="hobby-content">
+                        <div class="hobby-header">
+                            <h3>Gliding</h3>
+                            <div class="hobby-icon">✈️</div>
+                        </div>
+                        <p>Acquired the EASA gliding license in 2020</p>
+                    </div>
                 </div>
+
                 <div class="hobby-card">
-                    <div class="hobby-icon">🎵</div>
-                    <h3>Music</h3>
-                    <p>Playing guitar, discovering new genres, live concerts</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">🍳</div>
-                    <h3>Cooking</h3>
-                    <p>Experimenting with international cuisines</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">🔬</div>
-                    <h3>Science</h3>
-                    <p>Physics, AI, quantum computing, and innovation</p>
+                    <div class="hobby-image">
+                        <video autoplay loop muted playsinline>
+                            <source src="Element_Images/hobby_fun.MP4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="hobby-content">
+                        <div class="hobby-header">
+                            <h3>Fun Engineering Projects</h3>
+                            <div class="hobby-icon">💡</div>
+                        </div>
+                        <p>Build fun, interesting small projects with friends</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="#" id="email-link">
+                <img src="logos/email-icon.svg" alt="Email" class="contact-icon">
+            </a>
+            <a href="#" id="linkedin-link">
+                <img src="logos/linkedin-icon.svg" alt="LinkedIn" class="contact-icon">
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2026 Jérôme Bonvin. All rights reserved.</p>
-        <p>This website was created with GitHub Copilot</p>
     </footer>
 
     <!-- JavaScript -->

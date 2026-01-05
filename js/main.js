@@ -29,7 +29,7 @@ function initializeTimeline() {
                     
                     setTimeout(() => {
                         // Remove all background classes
-                        timelineSection.classList.remove('bg-event-1', 'bg-event-2', 'bg-event-3', 'bg-event-4', 'bg-event-5', 'bg-event-6', 'bg-event-7', 'bg-event-8');
+                        timelineSection.classList.remove('bg-event-1', 'bg-event-2', 'bg-event-3', 'bg-event-4', 'bg-event-5', 'bg-event-6', 'bg-event-7', 'bg-event-8', 'bg-event-9');
                         
                         // Add current event background class
                         const eventClass = `bg-event-${itemIndex + 1}`;
@@ -75,12 +75,6 @@ function initializeTimeline() {
         let scrollProgress = (viewportHeight - sectionTop) / (viewportHeight + sectionHeight);
         scrollProgress = Math.max(0, Math.min(1, scrollProgress));
         
-        // Only apply parallax when section is in view
-        if (sectionTop < viewportHeight && sectionTop + sectionHeight > 0) {
-            // Pan smoothly from 0% to 50% as user scrolls through the event
-            const yOffset = scrollProgress * 5; // 0% to 50%
-            timelineSection.style.backgroundPosition = `center ${yOffset}%`;
-        }
     });
         }
 

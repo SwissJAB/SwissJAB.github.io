@@ -26,11 +26,11 @@
 }
 
 .timeline-section.bg-event-4 {
-    background-image: url('../Background_Images/bachelor_thesis.png');
+    background-image: url('../Background_Images/ethz_bachelor.jpg');
 }
 
 .timeline-section.bg-event-5 {
-    background-image: url('../Background_Images/ethz_bachelor.jpg');
+    background-image: url('../Background_Images/bachelor_thesis.png');
 }
 
 .timeline-section.bg-event-6 {
@@ -42,6 +42,10 @@
 }
 
 .timeline-section.bg-event-8 {
+    background-image: url('../Background_Images/military.JPEG');
+}
+
+.timeline-section.bg-event-9 {
     background-image: url('../Background_Images/LCC.jpg');
 }
 
@@ -326,5 +330,11 @@
     .timeline-logo {
         width: 100px;
         height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-section {
+        background-attachment: scroll;
     }
 }
