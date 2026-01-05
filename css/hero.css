@@ -48,27 +48,21 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
     .hero {
         background-attachment: scroll;
         margin-top: 50px;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 4rem;
     }
-
+    .hero-content {
+        margin-right: 0;
+        text-align: center;
+    }
     .hero h1 {
         font-size: 3rem;
     }
 }
 
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
 
-    .hero {
-        height: 80vh;
-    }
-
-    .hero .subtitle {
-        font-size: 1rem;
-    }
-}
