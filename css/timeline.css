@@ -290,6 +290,14 @@
     .timeline-content {
         padding: 1.5rem;
     }
+    .timeline-section {
+        background: linear-gradient(180deg, #f8f9fa 0%, white 100%);
+        background-attachment: fixed;
+        background-size: auto 100%;
+        background-position: center center;
+        transition: opacity 0.6s ease-in-out;
+        background-repeat: no-repeat;
+    }
 
     .timeline::before {
         left: 20px;
@@ -300,5 +308,3 @@
         height: 50px;
     }
 }
-
-
