@@ -39,11 +39,11 @@ function initializeTimeline() {
                             // Set background image from data attribute
                             const bgImage = entry.target.getAttribute('data-bg');
                             if (bgImage) {
-                                section.style.backgroundImage = `url('${bgImage}')`;
+                                section.style.setProperty('--bg-image', `url('${bgImage}')`);
                             }
                             
                             // Reset background position when switching images
-                            section.style.backgroundPosition = 'center 0%';
+                            // section.style.backgroundPosition = 'center 0%'; // Handled in CSS now
                             
                             // End fade effect
                             section.classList.remove('fading');
@@ -68,7 +68,7 @@ function initializeTimeline() {
             timelineItems[0].classList.add('active');
             const initialBg = timelineItems[0].getAttribute('data-bg');
             if (initialBg) {
-                section.style.backgroundImage = `url('${initialBg}')`;
+                section.style.setProperty('--bg-image', `url('${initialBg}')`);
             }
             // Preload the second image immediately
             if (timelineItems.length > 1) {
