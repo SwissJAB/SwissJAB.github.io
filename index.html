@@ -6,15 +6,16 @@
     <title>Jérôme Bonvin</title>
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#hero" class="logo">Jérôme Bonvin</a>
+        <a href="#" class="logo">Jérôme Bonvin</a>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#hobbies">Hobbies</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -30,42 +31,30 @@
 
     <!-- Summary Section -->
     <section id="about" class="summary">
-        <h2 class="summary-title">About Me</h2>
-        <p class="summary-text">
-            I am a passionate and driven Electrical Engineering⚡ from <b>ETH Zurich</b>. My expertise lies in Signal Processing and Machine Learning, with a focus on developing innovative solutions for remote sensing 🛰️ and biomedical imaging 🔬. I have hands-on experience in deep learning for SAR image enhancement with <b>Airbus Defence and Space</b> ✈️, and have developed CNN models for object detection at the <b>University of Zürich</b>. I am always eager to tackle new challenges and learn new technologies.
-        </p>
+        <div class="summary-content">
+            <h2 class="summary-title">About Me</h2>
+            <p class="summary-text">
+                I am a passionate and driven Electrical Engineering⚡ from <b>ETH Zurich</b>. My expertise lies in Signal Processing and Machine Learning, with a focus on developing innovative solutions for remote sensing 🛰️ and biomedical imaging 🔬. I have hands-on experience in deep learning for SAR image enhancement with <b>Airbus Defence and Space</b> ✈️, and have developed CNN models for object detection at the <b>University of Zürich</b>. I am always eager to tackle new challenges and learn new technologies.
+            </p>
+        </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline-section">
+    <!-- Projects Splitter -->
+    <div class="section-splitter">
+        <h2>Internships & Projects</h2>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="timeline-section">
         <div class="timeline-container">
-            <h2 class="timeline-title">Timeline of Education & Projects</h2>
             <div class="timeline">
 
-                <!-- 1. Education: ETH MSc 2024 - Current (MOST RECENT) -->
-                <div class="timeline-item active" onclick="openFile(this)" data-link="https://ethz.ch" data-bg="Background_Images/ethz_masters.webp">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-logo">
-                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
-                        </div>
-                        <div class="timeline-image">
-                            <img src="Element_Images/ethz_masters.webp" alt="ETHZ" onerror="this.style.display='none'">
-                        </div>
-                        <div class="timeline-year">February 2024 - Current</div>
-                        <div class="timeline-project">ETH MSc in Electrical Engineering</div>
-                        <div class="timeline-description">
-                            Track: Signal Processing & Machine Learning.
-                        </div>
-                    </div>
-                </div>
-
                 <!-- 2. Project: Airbus 2025 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.airbus.com" data-bg="Background_Images/airbus_internship.webp">
+                <div class="timeline-item active" data-bg="Background_Images/airbus_internship.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
-                            <img src="logos/airbus_logo.png" alt="Airbus" onerror="this.style.display='none'">
+                            <img src="logos/airbus_logo.webp" alt="Airbus" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
                             <img src="Element_Images/airbus_internship.webp" alt="UZH" onerror="this.style.display='none'">
@@ -78,12 +67,12 @@
                     </div>
                 </div>
 
-                <!-- 3. Project: SAR Lab 2024 – Current -->
-                <div class="timeline-item" onclick="openFile(this)" data-file="sarlab/Vehicle_Detection.pdf" data-bg="Background_Images/sarlab.webp">
+                                <!-- 3. Project: SAR Lab -->
+                <div class="timeline-item" data-bg="Background_Images/sarlab.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
-                            <img src="logos/uzh_logo.png" alt="SAR Lab" onerror="this.style.display='none'">
+                            <img src="logos/uzh_logo.webp" alt="SAR Lab" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
                             <video autoplay loop muted playsinline>
@@ -98,30 +87,49 @@
                     </div>
                 </div>
 
-                <!-- 4. Education: ETH BSc 2020 - 2024 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch" data-bg="Background_Images/ethz_bachelor.webp">
+                <!-- 2. Project: Computer Vision and Artificial Intelligence for Autonomous Cars -->
+                <div class="timeline-item active" data-bg="Background_Images/CVAIAC.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
-                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
+                            <img src="logos/CVAIAC_logo.webp" alt="CVAIAC" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/ethz_bachelor.webp" alt="ETH" onerror="this.style.display='none'">
+                            <img src="Element_Images/CVAIAC.webp" alt="ETHZ" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">September 2020 - February 2024</div>
-                        <div class="timeline-project">ETH BSc in Electrical Engineering</div>
+                        <div class="timeline-year">September 2024 - February 2025</div>
+                        <div class="timeline-project">Computer Vision and Artificial Intelligence for Autonomous Cars Project</div>
                         <div class="timeline-description">
-                            Foundation in electrical engineering with focus on mathematics, computer science and physics.
+                            Implemented computer vision algorithms for autonomous driving perception and localization. Developed models for semantic segmentation, depth estimation, and 3D object detection using multi-modal sensor fusion.
                         </div>
                     </div>
                 </div>
-                
-                <!-- 5. Project: Bachelor Thesis 2023-2024 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch" data-bg="Background_Images/bachelor_thesis.webp">
+
+                <!-- 2. Project: Odometry -->
+                <div class="timeline-item active" data-bg="Background_Images/odometry.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
-                            <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
+                            <img src="logos/odometry_logo.webp" alt="Odometry" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            <img src="Element_Images/odometry.webp" alt="UZH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-year">September 2024 - February 2025</div>
+                        <div class="timeline-project">Vision Algorithms for Mobile Robotics Project</div>
+                        <div class="timeline-description">
+                            Implemented a visual odometry pipeline using SIFT for robust motion estimation across KITTI and Malaga datasets. Analyzed feature tracking in dynamic scenarios. Check out the <a href="https://www.youtube.com/playlist?list=PLYPB14LfGrkPhpV88stzWYthXyCQFvqRH" target="_blank" style="color: var(--accent-color); font-weight: 600;">demonstration videos</a>.
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- 5. Project: Bachelor Thesis 2023-2024 -->
+                <div class="timeline-item" data-bg="Background_Images/bachelor_thesis.webp">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/eth_logo.webp" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
                             <img src="Element_Images/bachelor_thesis.webp" alt="ETH" onerror="this.style.display='none'">
@@ -135,11 +143,11 @@
                 </div>
 
                 <!-- 6. Project: SONANO 2022-2023 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.eth-spin-off.ch" data-bg="Background_Images/sonano.webp">
+                <div class="timeline-item" data-bg="Background_Images/sonano.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
-                            <img src="logos/sonano_logo.png" alt="SONANO" onerror="this.style.display='none'">
+                            <img src="logos/sonano_logo.webp" alt="SONANO" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
                             <video autoplay loop muted playsinline>
@@ -154,30 +162,62 @@
                     </div>
                 </div>
 
-                <!-- 7. Sauvetage -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://siontourisme.ch/fr/piscines" data-bg="Background_Images/lifeguard.webp">
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Splitter -->
+    <div class="section-splitter">
+        <h2>Education & Obligations</h2>
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="timeline-section">
+        <div class="timeline-container">
+            <div class="timeline">
+
+                <!-- 1. Education: ETH MSc 2024 - Current (MOST RECENT) -->
+                <div class="timeline-item active" data-bg="Background_Images/ethz_masters.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
-                            <img src="logos/sion.svg" alt="Sion" onerror="this.style.display='none'">
+                            <img src="logos/eth_logo.webp" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/lifeguard.webp" alt="Lycée" onerror="this.style.display='none'">
+                            <img src="Element_Images/ethz_masters.webp" alt="ETHZ" onerror="this.style.display='none'">
                         </div>
-                        <div class="timeline-year">Summer 2020 - 2023</div>
-                        <div class="timeline-project">Lifeguard Summer Job</div>
+                        <div class="timeline-year">February 2024 - Current</div>
+                        <div class="timeline-project">ETH MSc in Electrical Engineering</div>
                         <div class="timeline-description">
-                            Part-time lifeguard responsible for ensuring swimmer safety and responding to emergencies.
+                            Track: Signal Processing & Machine Learning.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Education: ETH BSc 2020 - 2024 -->
+                <div class="timeline-item" data-bg="Background_Images/ethz_bachelor.webp">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-logo">
+                            <img src="logos/eth_logo.webp" alt="ETH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-image">
+                            <img src="Element_Images/ethz_bachelor.webp" alt="ETH" onerror="this.style.display='none'">
+                        </div>
+                        <div class="timeline-year">September 2020 - February 2024</div>
+                        <div class="timeline-project">ETH BSc in Electrical Engineering</div>
+                        <div class="timeline-description">
+                            Foundation in electrical engineering with focus on mathematics, computer science and physics.
                         </div>
                     </div>
                 </div>
     
                 <!-- 9. Military: 2019 - 2020  -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/" data-bg="Background_Images/military.webp">
+                <div class="timeline-item" data-bg="Background_Images/military.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
-                            <img src="logos/military.png" alt="Military" onerror="this.style.display='none'">
+                            <img src="logos/military.webp" alt="Military" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
                             <img src="Element_Images/military.webp" alt="Military" onerror="this.style.display='none'">
@@ -191,7 +231,7 @@
                 </div>
 
                 <!-- 8. Education: Lycée 2014 - 2019 (OLDEST) -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/" data-bg="Background_Images/LCC.webp">
+                <div class="timeline-item" data-bg="Background_Images/LCC.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
@@ -236,7 +276,7 @@
                             <h3>Swimming</h3>
                             <div class="hobby-icon">🏊</div>
                         </div>
-                        <p>Won the Walliser Championship in 2016</p>
+                        <p>Former lifeguard. Won the Walliser Championship in 2016</p>
                     </div>
                 </div>
                 
@@ -285,8 +325,8 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Footer & Contact -->
+    <footer id="contact">
         <h2>Contact Me</h2>
         <div class="contact-links">
             <a href="mailto:jerome.bonvin@hotmail.com" id="email-link">
@@ -296,14 +336,10 @@
                 <img src="logos/linkedin-icon.svg" alt="LinkedIn" class="contact-icon">
             </a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
         <p>© 2026 Jérôme Bonvin. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
