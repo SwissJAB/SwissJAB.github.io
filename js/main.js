@@ -24,16 +24,21 @@ function initializeTimeline() {
                 if (itemIndex !== -1 && itemIndex !== currentEventIndex) {
                     currentEventIndex = itemIndex;
                     
+                    // Preload next image to prevent flickering
+                    if (itemIndex + 1 < timelineItems.length) {
+                        const nextBg = timelineItems[itemIndex + 1].getAttribute('data-bg');
+                        if (nextBg) new Image().src = nextBg;
+                    }
+                    
                     // Create fade effect
                     timelineSection.classList.add('fading');
                     
                     setTimeout(() => {
-                        // Remove all background classes
-                        timelineSection.classList.remove('bg-event-1', 'bg-event-2', 'bg-event-3', 'bg-event-4', 'bg-event-5', 'bg-event-6', 'bg-event-7', 'bg-event-8', 'bg-event-9');
-                        
-                        // Add current event background class
-                        const eventClass = `bg-event-${itemIndex + 1}`;
-                        timelineSection.classList.add(eventClass);
+                        // Set background image from data attribute
+                        const bgImage = entry.target.getAttribute('data-bg');
+                        if (bgImage) {
+                            timelineSection.style.backgroundImage = `url('${bgImage}')`;
+                        }
                         
                         // Reset background position when switching images
                         timelineSection.style.backgroundPosition = 'center 0%';
@@ -45,7 +50,7 @@ function initializeTimeline() {
                         timelineItems.forEach(item => item.classList.remove('active'));
                         entry.target.classList.add('active');
                         
-                        console.log('Switched to event', itemIndex + 1, 'class:', eventClass);
+                        console.log('Switched to event', itemIndex + 1, 'image:', bgImage);
                     }, 250);
                 }
             }
@@ -59,24 +64,18 @@ function initializeTimeline() {
     // Set initial state
     if (timelineItems.length > 0) {
         timelineItems[0].classList.add('active');
-        timelineSection.classList.add('bg-event-1');
+        const initialBg = timelineItems[0].getAttribute('data-bg');
+        if (initialBg) {
+            timelineSection.style.backgroundImage = `url('${initialBg}')`;
+        }
+        // Preload the second image immediately
+        if (timelineItems.length > 1) {
+            const secondBg = timelineItems[1].getAttribute('data-bg');
+            if (secondBg) new Image().src = secondBg;
+        }
         console.log('Timeline initialized - set to event 1');
     }
-    
-    // Scroll-based parallax effect (distance-related, not time-based)
-    window.addEventListener('scroll', () => {
-        const rect = timelineSection.getBoundingClientRect();
-        const sectionTop = rect.top;
-        const sectionHeight = rect.height;
-        const viewportHeight = window.innerHeight;
-        
-        // Calculate how far through the section the user has scrolled (0 to 1)
-        // Clamped to prevent jumps outside the visible range
-        let scrollProgress = (viewportHeight - sectionTop) / (viewportHeight + sectionHeight);
-        scrollProgress = Math.max(0, Math.min(1, scrollProgress));
-        
-    });
-        }
+}
 
 // Open file or URL from timeline item
 function openFile(element) {
@@ -94,14 +93,6 @@ function openFile(element) {
 
 // Run on page load
 document.addEventListener('DOMContentLoaded', initializeTimeline);
-
-// Gallery toggle (kept for backwards compatibility)
-function toggleGallery(galleryId) {
-    const gallery = document.getElementById(galleryId);
-    if (gallery) {
-        gallery.style.display = gallery.style.display === 'none' ? 'block' : 'none';
-    }
-}
 
 // Open media in modal
 function openMediaModal(element) {

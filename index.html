@@ -6,16 +6,7 @@
     <title>Jérôme Bonvin</title>
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/summary.css">
-    <link rel="stylesheet" href="css/timeline.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/hobbies.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -52,14 +43,14 @@
             <div class="timeline">
 
                 <!-- 1. Education: ETH MSc 2024 - Current (MOST RECENT) -->
-                <div class="timeline-item active" onclick="openFile(this)" data-link="https://ethz.ch">
+                <div class="timeline-item active" onclick="openFile(this)" data-link="https://ethz.ch" data-bg="Background_Images/ethz_masters.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/ethz_masters.png" alt="ETHZ" onerror="this.style.display='none'">
+                            <img src="Element_Images/ethz_masters.webp" alt="ETHZ" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-year">February 2024 - Current</div>
                         <div class="timeline-project">ETH MSc in Electrical Engineering</div>
@@ -70,14 +61,14 @@
                 </div>
 
                 <!-- 2. Project: Airbus 2025 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.airbus.com">
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.airbus.com" data-bg="Background_Images/airbus_internship.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/airbus_logo.png" alt="Airbus" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/airbus_internship.jpg" alt="UZH" onerror="this.style.display='none'">
+                            <img src="Element_Images/airbus_internship.webp" alt="UZH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-year">June 2025 - December 2025</div>
                         <div class="timeline-project">AI Application Engineer</div>
@@ -88,14 +79,16 @@
                 </div>
 
                 <!-- 3. Project: SAR Lab 2024 – Current -->
-                <div class="timeline-item" onclick="openFile(this)" data-file="sarlab/Vehicle_Detection.pdf">
+                <div class="timeline-item" onclick="openFile(this)" data-file="sarlab/Vehicle_Detection.pdf" data-bg="Background_Images/sarlab.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/uzh_logo.png" alt="SAR Lab" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/sarlab.gif" alt="UZH" onerror="this.style.display='none'">
+                            <video autoplay loop muted playsinline>
+                                <source src="Element_Images/sarlab.webm" type="video/webm">
+                            </video>
                         </div>
                         <div class="timeline-year">March 2024 - May 2025</div>
                         <div class="timeline-project">SAR Lab Research</div>
@@ -106,14 +99,14 @@
                 </div>
 
                 <!-- 4. Education: ETH BSc 2020 - 2024 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch">
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch" data-bg="Background_Images/ethz_bachelor.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/ethz_bachelor.jpg" alt="ETH" onerror="this.style.display='none'">
+                            <img src="Element_Images/ethz_bachelor.webp" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-year">September 2020 - February 2024</div>
                         <div class="timeline-project">ETH BSc in Electrical Engineering</div>
@@ -124,14 +117,14 @@
                 </div>
                 
                 <!-- 5. Project: Bachelor Thesis 2023-2024 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch">
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://ethz.ch" data-bg="Background_Images/bachelor_thesis.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/eth_logo.png" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/bachelor_thesis.JPG" alt="ETH" onerror="this.style.display='none'">
+                            <img src="Element_Images/bachelor_thesis.webp" alt="ETH" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-year">August 2023 - January 2024</div>
                         <div class="timeline-project">Bachelor Thesis</div>
@@ -142,14 +135,16 @@
                 </div>
 
                 <!-- 6. Project: SONANO 2022-2023 -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.eth-spin-off.ch">
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://www.eth-spin-off.ch" data-bg="Background_Images/sonano.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/sonano_logo.png" alt="SONANO" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/sonano.gif" alt="ETH" onerror="this.style.display='none'">
+                            <video autoplay loop muted playsinline>
+                                <source src="Element_Images/sonano.webm" type="video/webm">
+                            </video>
                         </div>
                         <div class="timeline-year">September 2022 - July 2023</div>
                         <div class="timeline-project">SONANO Project</div>
@@ -160,14 +155,14 @@
                 </div>
 
                 <!-- 7. Sauvetage -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://siontourisme.ch/fr/piscines">
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://siontourisme.ch/fr/piscines" data-bg="Background_Images/lifeguard.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/sion.svg" alt="Sion" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/lifeguard.png" alt="Lycée" onerror="this.style.display='none'">
+                            <img src="Element_Images/lifeguard.webp" alt="Lycée" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-year">Summer 2020 - 2023</div>
                         <div class="timeline-project">Lifeguard Summer Job</div>
@@ -178,14 +173,14 @@
                 </div>
     
                 <!-- 9. Military: 2019 - 2020  -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/">
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/" data-bg="Background_Images/military.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/military.png" alt="Military" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/military.JPEG" alt="Military" onerror="this.style.display='none'">
+                            <img src="Element_Images/military.webp" alt="Military" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-year">July 2019 - May 2020</div>
                         <div class="timeline-project">Military Service</div>
@@ -196,14 +191,14 @@
                 </div>
 
                 <!-- 8. Education: Lycée 2014 - 2019 (OLDEST) -->
-                <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/">
+                <div class="timeline-item" onclick="openFile(this)" data-link="https://lccreusets.ch/" data-bg="Background_Images/LCC.webp">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-logo">
                             <img src="logos/lycee_logo.svg" alt="Lycée" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-image">
-                            <img src="Element_Images/lcc.JPEG" alt="Lycée" onerror="this.style.display='none'">
+                            <img src="Element_Images/lcc.webp" alt="Lycée" onerror="this.style.display='none'">
                         </div>
                         <div class="timeline-year">August 2014 - June 2019</div>
                         <div class="timeline-project">High School Diploma</div>
@@ -234,7 +229,7 @@
             <div class="hobbies-grid">
                 <div class="hobby-card">
                     <div class="hobby-image">
-                        <img src="Element_Images/hobby_swim.jpg" alt="Swimming">
+                        <img src="Element_Images/hobby_swim.webp" alt="Swimming" loading="lazy">
                     </div>
                     <div class="hobby-content">
                         <div class="hobby-header">
@@ -247,7 +242,7 @@
                 
                 <div class="hobby-card">
                     <div class="hobby-image">
-                        <img src="Element_Images/hobby_hiking.JPEG" alt="Mountain Sports">
+                        <img src="Element_Images/hobby_hiking.webp" alt="Mountain Sports" loading="lazy">
                     </div>
                     <div class="hobby-content">
                         <div class="hobby-header">
@@ -260,7 +255,7 @@
 
                 <div class="hobby-card">
                     <div class="hobby-image">
-                        <img src="Element_Images/hobby_gliding.jpg" alt="Gliding">
+                        <img src="Element_Images/hobby_gliding.webp" alt="Gliding" loading="lazy">
                     </div>
                     <div class="hobby-content">
                         <div class="hobby-header">
@@ -274,7 +269,7 @@
                 <div class="hobby-card">
                     <div class="hobby-image">
                         <video autoplay loop muted playsinline>
-                            <source src="Element_Images/hobby_fun.MP4" type="video/mp4">
+                            <source src="Element_Images/hobby_fun.webm" type="video/webm">
                             Your browser does not support the video tag.
                         </video>
                     </div>
